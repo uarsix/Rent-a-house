@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+  <div>地图找房</div>
 </template>
 
 <script>
 export default {
-
+  name: 'map'
 }
 </script>
 

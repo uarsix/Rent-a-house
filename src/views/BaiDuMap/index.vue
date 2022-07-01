@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+  <div>百度地图</div>
 </template>
 
 <script>
 export default {
-
+  name: 'baidumap'
 }
 </script>
 
