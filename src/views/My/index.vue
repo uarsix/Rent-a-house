@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="myInfo" v-if="userMessage.nickname">
+    <div class="myInfo" v-if="userMessage && userMessage.nickname">
       <div class="myInfo-img">
         <img
           :src="

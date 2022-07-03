@@ -5,7 +5,12 @@
         <template #title>
           <div class="search-city">
             <span class="nowCity"
-              >北京<van-icon class="icor" name="play" color="rgb(80,74,74)"
+              >{{ $store.state.defaultCity.label
+              }}<van-icon
+                class="icor"
+                name="play"
+                color="rgb(80,74,74)"
+                @click="$router.push({ name: 'city' })"
             /></span>
             <van-search v-model="value" placeholder="请输入小区或地址" />
             <i class="mapIco"

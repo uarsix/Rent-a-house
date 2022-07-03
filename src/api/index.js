@@ -56,15 +56,50 @@ export const getSwipeImg = () => {
 }
 
 /**
-* 租房小组
-*
-*
-**/
+ * 租房小组
+ * @returns
+ */
 export const getRentalGroup = () => {
   return instance({
     url: 'home/groups',
     params: {
       area: 'AREA|88cff55c-aaa4-e2e0'
+    }
+  })
+}
+/**
+ * 热门城市
+ * @returns
+ */
+export const getHotCity = () => {
+  return instance({
+    url: 'area/hot'
+  })
+}
+
+/**
+ * 获取城市列表
+ * @param {Number} level
+ * @returns
+ */
+export const getCityList = (level) => {
+  return instance({
+    url: 'area/city',
+    params: {
+      level
+    }
+  })
+}
+/**
+ * 根据城市查询城市信息
+ * @param {String} cityCode
+ * @returns
+ */
+export const getAreaInfo = (cityCode) => {
+  return instance({
+    url: 'area/info',
+    params: {
+      name: cityCode
     }
   })
 }

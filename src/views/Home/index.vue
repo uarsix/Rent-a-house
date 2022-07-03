@@ -1,53 +1,55 @@
 <template>
-  <div>
-    <TopNav class="topSearch"></TopNav>
-    <van-swipe :autoplay="3000" class="my-swipe">
-      <van-swipe-item v-for="(image, index) in swipeImages" :key="index">
-        <img
-          v-lazy="'http://liufusong.top:8080' + image"
-          :width="375"
-          :height="212"
-        />
-      </van-swipe-item>
-    </van-swipe>
-    <van-grid column-num="4">
-      <van-grid-item icon="wap-home-o" text="整租" class="inner1" />
-      <van-grid-item icon="friends-o" text="合租" class="inner1" />
-      <van-grid-item icon="guide-o" text="地图找房" class="inner1" />
-      <van-grid-item icon="home-o" text="去出租" class="inner1" />
-    </van-grid>
-    <div class="RentalGroup">
-      <van-nav-bar
-        right-text="更多"
-        @click-right="$router.replace({ name: 'find' })"
-        style="height: 47px"
-        ><template #left>
-          <div style="font-size: 20px">租房小组</div>
-        </template></van-nav-bar
-      >
-      <div class="RentalGroupMain">
-        <div
-          class="RentalGroupConnect"
-          v-for="(item, index) in RentalGroupMessage"
-          :key="index"
+  <keep-alive>
+    <div>
+      <TopNav class="topSearch"></TopNav>
+      <van-swipe :autoplay="3000" class="my-swipe">
+        <van-swipe-item v-for="(image, index) in swipeImages" :key="index">
+          <img
+            v-lazy="'http://liufusong.top:8080' + image"
+            :width="375"
+            :height="212"
+          />
+        </van-swipe-item>
+      </van-swipe>
+      <van-grid column-num="4">
+        <van-grid-item icon="wap-home-o" text="整租" class="inner1" />
+        <van-grid-item icon="friends-o" text="合租" class="inner1" />
+        <van-grid-item icon="guide-o" text="地图找房" class="inner1" />
+        <van-grid-item icon="home-o" text="去出租" class="inner1" />
+      </van-grid>
+      <div class="RentalGroup">
+        <van-nav-bar
+          right-text="更多"
+          @click-right="$router.replace({ name: 'find' })"
+          style="height: 47px"
+          ><template #left>
+            <div style="font-size: 20px">租房小组</div>
+          </template></van-nav-bar
         >
-          <div>
-            <van-image
-              class="RentalGroupImg"
-              width="50"
-              height="50"
-              :src="'http://liufusong.top:8080' + item.imgSrc"
-            />
-          </div>
-          <div class="RentalGroupRight">
-            <h4>{{ item.title }}</h4>
-            <p>{{ item.desc }}</p>
+        <div class="RentalGroupMain">
+          <div
+            class="RentalGroupConnect"
+            v-for="(item, index) in RentalGroupMessage"
+            :key="index"
+          >
+            <div>
+              <van-image
+                class="RentalGroupImg"
+                width="50"
+                height="50"
+                :src="'http://liufusong.top:8080' + item.imgSrc"
+              />
+            </div>
+            <div class="RentalGroupRight">
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.desc }}</p>
+            </div>
           </div>
         </div>
       </div>
+      <LayoutStar></LayoutStar>
     </div>
-    <LayoutStar></LayoutStar>
-  </div>
+  </keep-alive>
 </template>
 
 <script>
@@ -63,7 +65,6 @@ export default {
       })
       const res1 = await getRentalGroup()
       this.RentalGroupMessage = res1.data.body
-      console.log(this.RentalGroupMessage)
     } catch (err) { console.log(err) }
   },
   components: {

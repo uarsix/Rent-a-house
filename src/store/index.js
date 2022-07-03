@@ -8,7 +8,14 @@ const vuexLocal = new VueXPersistence({
 
 export default new Vuex.Store({
   state: {
-    userToken: {}
+    userToken: {},
+    // 当前城市
+    defaultCity: {
+      label: '北京',
+      pinyin: 'beijing',
+      short: 'bj',
+      value: 'AREA|88cff55c-aaa4-e2e0'
+    }
   },
   getters: {
   },
@@ -18,6 +25,10 @@ export default new Vuex.Store({
     },
     outUser (state) {
       state.userToken = {}
+    },
+    // 点击更新城市
+    checkCity (state, payload) {
+      state.defaultCity = payload
     }
   },
   actions: {
