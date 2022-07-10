@@ -103,3 +103,31 @@ export const getAreaInfo = (cityCode) => {
     }
   })
 }
+
+/**
+ * 查询房源
+ * @param {*-} cityId
+ * @returns
+ */
+export const cityMessage = (params) => {
+  return instance({
+    url: 'houses',
+    params
+  })
+}
+
+export const getCityCondition = () => {
+  return instance({
+    url: 'houses/condition',
+    params: { id: 'AREA|88cff55c-aaa4-e2e0' }
+  })
+}
+
+export const myHourses = (token) => {
+  return instance({
+    url: 'user/houses',
+    headers: {
+      authorization: token
+    }
+  })
+}

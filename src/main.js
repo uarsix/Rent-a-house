@@ -5,7 +5,7 @@ import store from './store'
 import '@/Vant/index'
 import '@/Styles/reset.less'
 Vue.config.productionTip = false
-
+Vue.prototype.$imgUrl = 'http://liufusong.top:8080'
 new Vue({
   router,
   store,

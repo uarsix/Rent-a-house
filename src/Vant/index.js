@@ -1,6 +1,13 @@
 import Vue from 'vue'
-import { Tabbar, TabbarItem, NavBar, Form, Field, Button, Toast, Grid, GridItem, Icon, Search, Swipe, SwipeItem, Lazyload, Image as VanImage, Area, IndexBar, IndexAnchor, Cell, CellGroup, Cascader, Popup } from 'vant'
+import { Tabbar, TabbarItem, NavBar, Form, Field, Button, Toast, Grid, GridItem, Icon, Search, Swipe, SwipeItem, Lazyload, Image as VanImage, Area, IndexBar, IndexAnchor, Cell, CellGroup, Cascader, Popup, List, Loading, Picker, DropdownMenu, DropdownItem, Col, Row } from 'vant'
 
+Vue.use(Col)
+Vue.use(Row)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
+Vue.use(Picker)
+Vue.use(Loading)
+Vue.use(List)
 Vue.use(Popup)
 Vue.use(Cascader)
 Vue.use(Cell)

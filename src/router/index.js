@@ -12,7 +12,8 @@ const routes = [
   { path: '/login', name: 'login', component: () => import('@/views/Login') },
   { path: '/map', name: 'map', component: () => import('@/views/Map') },
   { path: '/city', name: 'city', component: () => import('@/views/City') },
-  { path: '/baidumap', name: 'baodumap', component: () => import('@/views/BaiDuMap') }
+  { path: '/baidumap', name: 'baodumap', component: () => import('@/views/BaiDuMap') },
+  { path: '/myrent', name: 'myrent', component: () => import('@/views/Myrent') }
 ]
 
 const router = new VueRouter({

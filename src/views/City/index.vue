@@ -37,6 +37,7 @@ export default {
       '热': res.data.body
     }
     this.cityList = { ...obj, ...city(res1.data.body) }
+    console.log(res1)
     this.cityIndex = Object.keys(this.cityList)
     res.data.body.forEach(item => this.hotCity.push(item.label))
   },
@@ -52,7 +53,7 @@ export default {
     checkCity (item1) {
       if (this.hotCity.findIndex(ind => ind === item1.label) !== -1) {
         this.$store.commit('checkCity', item1)
-        this.$router.push({ name: 'home' })
+        this.$router.back(-1)
         return
       }
       Toast('当前城市尚未开通服务')
